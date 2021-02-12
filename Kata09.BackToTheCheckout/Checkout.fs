@@ -1,48 +1,52 @@
 ﻿module Kata09.Checkout
 
-type PriceRule =
-    | NormalPrice of Sku: string * UnitPrice: int
-    | BulkDiscountedPrice of Sku: string * UnitPrice: int * DiscountQuantity: int * DiscountPrice: int
+type ItemPrice =
+    | NormalPrice of int
+    | SpecialPrice of quantity: int * price: int
+
+type PricingRule =
+    { Sku: string
+      Priority: int
+      Price: ItemPrice }
 
 type Checkout =
-    { PriceRules: PriceRule list
-      LineItems: Map<string, int> }
-    
+    { PriceRules: PricingRule list
+      Skus: string list }
+
     /// Create a new checkout with the given rules
-    static member create rules =
-        { PriceRules = rules; LineItems = Map.empty }
+    static member create rules = { PriceRules = rules; Skus = [] }
 
     /// Scan a new sku, adding it to the line items in the checkout
     static member scan sku checkout =
-        let quantity =
-            Map.tryFind sku checkout.LineItems
-            |> Option.defaultValue 0
-
         { checkout with
-              LineItems = Map.add sku (quantity + 1) checkout.LineItems }
+              Skus = checkout.Skus @ [ sku ] }
 
     /// Calculate the total price of the the given checkout
     static member total checkout =
-        checkout.LineItems
-        |> Map.map checkout.itemPrice
-        |> Map.toSeq
-        |> Seq.sumBy snd
-        
-    member private this.itemPrice itemSku itemQuantity =
-        let rule =
+        checkout.Skus
+        |> List.countBy id
+        |> List.sumBy checkout.itemPrice
+
+    member private this.itemPrice(sku, quantity) =
+        let applyRule price currentTotal currentQuantity =
+            match price with
+            | SpecialPrice (q, amount) when q <= currentQuantity -> Some(currentTotal + amount, currentQuantity - q)
+            | NormalPrice amount -> Some(currentTotal + amount, currentQuantity - 1)
+            | _ -> None
+
+        let rules =
             this.PriceRules
-            |> List.find (fun rule ->
-                match rule with
-                | NormalPrice (sku, _) -> sku = itemSku
-                | BulkDiscountedPrice (sku, _, _, _) -> sku = itemSku)
+            |> List.filter (fun rule -> rule.Sku = sku)
+            |> List.sortByDescending (fun rule -> rule.Priority)
 
-        match rule with
-        | NormalPrice (_, unitPrice) -> itemQuantity * unitPrice
-        | BulkDiscountedPrice (_, unitPrice, discountQuantity, discountPrice) ->
-            let totalDiscountedPrice =
-                (itemQuantity / discountQuantity) * discountPrice
+        let mutable total = 0
+        let mutable quantityLeft = quantity
 
-            let restPrice =
-                (itemQuantity % discountQuantity) * unitPrice
+        while quantityLeft > 0 do
+            let newTotal, newQuantityLeft =
+                List.pick (fun rule -> applyRule rule.Price total quantityLeft) rules
 
-            totalDiscountedPrice + restPrice
+            total <- newTotal
+            quantityLeft <- newQuantityLeft
+
+        total

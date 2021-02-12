@@ -6,17 +6,25 @@ open Xunit
 [<Fact>]
 let ``Normal prices`` () =
     let rules =
-        [ NormalPrice("A", 50)
-          NormalPrice("B", 30)
-          NormalPrice("C", 20)
-          NormalPrice("D", 15) ]
+        [ { Sku = "A"
+            Priority = 1
+            Price = NormalPrice(50) }
+          { Sku = "B"
+            Priority = 1
+            Price = NormalPrice(30) }
+          { Sku = "C"
+            Priority = 1
+            Price = NormalPrice(20) }
+          { Sku = "D"
+            Priority = 1
+            Price = NormalPrice(15) } ]
 
     Checkout.create rules
     |> Checkout.scan "A"
     |> Checkout.scan "A"
     |> Checkout.total
     |> fun total -> Assert.Equal(100, total)
-    
+
     Checkout.create rules
     |> Checkout.scan "A"
     |> Checkout.scan "B"
@@ -26,24 +34,38 @@ let ``Normal prices`` () =
 [<Fact>]
 let ``Prices with discounts`` () =
     let rules =
-        [ BulkDiscountedPrice("A", 50, 3, 130)
-          BulkDiscountedPrice("B", 30, 2, 45)
-          NormalPrice("C", 20)
-          NormalPrice("D", 15) ]
+        [ { Sku = "A"
+            Priority = 2
+            Price = SpecialPrice(3, 130) }
+          { Sku = "A"
+            Priority = 1
+            Price = NormalPrice(50) }
+          { Sku = "B"
+            Priority = 2
+            Price = SpecialPrice(2, 45) }
+          { Sku = "B"
+            Priority = 1
+            Price = NormalPrice(30) }
+          { Sku = "C"
+            Priority = 1
+            Price = NormalPrice(20) }
+          { Sku = "D"
+            Priority = 1
+            Price = NormalPrice(15) } ]
 
     Checkout.create rules
     |> Checkout.scan "A"
     |> Checkout.scan "A"
     |> Checkout.total
     |> fun total -> Assert.Equal(100, total)
-    
+
     Checkout.create rules
     |> Checkout.scan "A"
     |> Checkout.scan "A"
     |> Checkout.scan "A"
     |> Checkout.total
     |> fun total -> Assert.Equal(130, total)
-    
+
     Checkout.create rules
     |> Checkout.scan "A"
     |> Checkout.scan "A"
