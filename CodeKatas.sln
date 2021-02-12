@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata05.BloomFilters", "Kata05.BloomFilters\Kata05.BloomFilters.fsproj", "{8F7A364D-97FA-42AB-B32C-0BC54E6BCD1B}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata05.BloomFilters.Test", "Kata05.BloomFilters.Test\Kata05.BloomFilters.Test.fsproj", "{ED79C3CD-E4AF-4264-B658-026B707725BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F7A364D-97FA-42AB-B32C-0BC54E6BCD1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F7A364D-97FA-42AB-B32C-0BC54E6BCD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F7A364D-97FA-42AB-B32C-0BC54E6BCD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F7A364D-97FA-42AB-B32C-0BC54E6BCD1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED79C3CD-E4AF-4264-B658-026B707725BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED79C3CD-E4AF-4264-B658-026B707725BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED79C3CD-E4AF-4264-B658-026B707725BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED79C3CD-E4AF-4264-B658-026B707725BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
