@@ -1,4 +1,4 @@
-﻿# Kata11: Sorting It Out
+﻿# [Kata11: Sorting It Out](http://codekata.com/kata/kata11-sorting-it-out/)
 
 Just because we need to sort something doesn’t necessarily mean we need to use a conventional sorting algorithm.
 

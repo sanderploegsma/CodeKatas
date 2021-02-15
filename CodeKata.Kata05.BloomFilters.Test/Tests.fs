@@ -1,6 +1,6 @@
 module Tests
 
-open BloomFilter
+open CodeKata.Kata05.BloomFilters.BloomFilter
 open System
 open Xunit
 

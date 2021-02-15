@@ -1,4 +1,4 @@
-﻿module Kata09.Checkout
+﻿module CodeKata.Kata09.Checkout
 
 type ItemPrice =
     | NormalPrice of int

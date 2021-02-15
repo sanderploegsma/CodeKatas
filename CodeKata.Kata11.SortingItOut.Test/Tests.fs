@@ -1,7 +1,7 @@
 module Tests
 
 open FsUnit.Xunit
-open Kata11.SortingItOut
+open CodeKata.Kata11.SortingItOut
 open Xunit
 
 [<Fact>]

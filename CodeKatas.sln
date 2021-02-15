@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata05.BloomFilters", "Kata05.BloomFilters\Kata05.BloomFilters.fsproj", "{8F7A364D-97FA-42AB-B32C-0BC54E6BCD1B}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CodeKata.Kata05.BloomFilters", "CodeKata.Kata05.BloomFilters\CodeKata.Kata05.BloomFilters.fsproj", "{8F7A364D-97FA-42AB-B32C-0BC54E6BCD1B}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata05.BloomFilters.Test", "Kata05.BloomFilters.Test\Kata05.BloomFilters.Test.fsproj", "{ED79C3CD-E4AF-4264-B658-026B707725BB}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CodeKata.Kata05.BloomFilters.Test", "CodeKata.Kata05.BloomFilters.Test\CodeKata.Kata05.BloomFilters.Test.fsproj", "{ED79C3CD-E4AF-4264-B658-026B707725BB}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata09.BackToTheCheckout", "Kata09.BackToTheCheckout\Kata09.BackToTheCheckout.fsproj", "{52FD1AF7-0CBC-42F6-87FE-00BC6381F762}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CodeKata.Kata09.BackToTheCheckout", "CodeKata.Kata09.BackToTheCheckout\CodeKata.Kata09.BackToTheCheckout.fsproj", "{52FD1AF7-0CBC-42F6-87FE-00BC6381F762}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata09.BackToTheCheckout.Test", "Kata09.BackToTheCheckout.Test\Kata09.BackToTheCheckout.Test.fsproj", "{1B67EB02-4E41-40A4-B9C1-728811089908}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CodeKata.Kata09.BackToTheCheckout.Test", "CodeKata.Kata09.BackToTheCheckout.Test\CodeKata.Kata09.BackToTheCheckout.Test.fsproj", "{1B67EB02-4E41-40A4-B9C1-728811089908}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata11.SortingItOut", "Kata11.SortingItOut\Kata11.SortingItOut.fsproj", "{22E45A32-A53A-404E-9E0A-377D570F886F}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CodeKata.Kata11.SortingItOut", "CodeKata.Kata11.SortingItOut\CodeKata.Kata11.SortingItOut.fsproj", "{22E45A32-A53A-404E-9E0A-377D570F886F}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata11.SortingItOut.Test", "Kata11.SortingItOut.Test\Kata11.SortingItOut.Test.fsproj", "{C08E3FA6-2D59-460C-BE38-9069E6374046}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CodeKata.Kata11.SortingItOut.Test", "CodeKata.Kata11.SortingItOut.Test\CodeKata.Kata11.SortingItOut.Test.fsproj", "{C08E3FA6-2D59-460C-BE38-9069E6374046}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

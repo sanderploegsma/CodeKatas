@@ -1,6 +1,6 @@
 module Tests
 
-open Kata09.Checkout
+open CodeKata.Kata09.Checkout
 open Xunit
 
 [<Fact>]

@@ -1,4 +1,4 @@
-﻿namespace Kata11.SortingItOut
+﻿namespace CodeKata.Kata11.SortingItOut
 
 open System
 

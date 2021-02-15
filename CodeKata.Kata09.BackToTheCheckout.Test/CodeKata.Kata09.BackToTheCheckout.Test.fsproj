@@ -20,7 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Kata09.BackToTheCheckout\Kata09.BackToTheCheckout.fsproj" />
+      <ProjectReference Include="..\CodeKata.Kata09.BackToTheCheckout\CodeKata.Kata09.BackToTheCheckout.fsproj" />
     </ItemGroup>
 
 </Project>
