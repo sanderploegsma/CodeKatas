@@ -8,6 +8,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata09.BackToTheCheckout", 
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata09.BackToTheCheckout.Test", "Kata09.BackToTheCheckout.Test\Kata09.BackToTheCheckout.Test.fsproj", "{1B67EB02-4E41-40A4-B9C1-728811089908}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata11.SortingItOut", "Kata11.SortingItOut\Kata11.SortingItOut.fsproj", "{22E45A32-A53A-404E-9E0A-377D570F886F}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Kata11.SortingItOut.Test", "Kata11.SortingItOut.Test\Kata11.SortingItOut.Test.fsproj", "{C08E3FA6-2D59-460C-BE38-9069E6374046}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{1B67EB02-4E41-40A4-B9C1-728811089908}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B67EB02-4E41-40A4-B9C1-728811089908}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B67EB02-4E41-40A4-B9C1-728811089908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E45A32-A53A-404E-9E0A-377D570F886F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E45A32-A53A-404E-9E0A-377D570F886F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E45A32-A53A-404E-9E0A-377D570F886F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E45A32-A53A-404E-9E0A-377D570F886F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08E3FA6-2D59-460C-BE38-9069E6374046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08E3FA6-2D59-460C-BE38-9069E6374046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08E3FA6-2D59-460C-BE38-9069E6374046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08E3FA6-2D59-460C-BE38-9069E6374046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
