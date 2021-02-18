@@ -12,6 +12,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CodeKata.Kata11.SortingItOu
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CodeKata.Kata11.SortingItOut.Test", "CodeKata.Kata11.SortingItOut.Test\CodeKata.Kata11.SortingItOut.Test.fsproj", "{C08E3FA6-2D59-460C-BE38-9069E6374046}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RpgCombat", "RpgCombat\RpgCombat.fsproj", "{31245A64-0BA8-4C1F-A5D1-1E050F5709F7}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RpgCombat.Test", "RpgCombat.Test\RpgCombat.Test.fsproj", "{22F0BC47-41CF-4F11-BD56-0EBF03695705}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,13 @@ Global
 		{C08E3FA6-2D59-460C-BE38-9069E6374046}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C08E3FA6-2D59-460C-BE38-9069E6374046}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C08E3FA6-2D59-460C-BE38-9069E6374046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31245A64-0BA8-4C1F-A5D1-1E050F5709F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31245A64-0BA8-4C1F-A5D1-1E050F5709F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31245A64-0BA8-4C1F-A5D1-1E050F5709F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31245A64-0BA8-4C1F-A5D1-1E050F5709F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22F0BC47-41CF-4F11-BD56-0EBF03695705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F0BC47-41CF-4F11-BD56-0EBF03695705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F0BC47-41CF-4F11-BD56-0EBF03695705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F0BC47-41CF-4F11-BD56-0EBF03695705}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
