@@ -1,7 +1,7 @@
 namespace RpgCombat.Tests
 
-open System.Net.Http
-open RpgCombat
+open RpgCombat.Domain
+open RpgCombat.Engine
 open Xunit
 
 module TestHelpers =
@@ -82,7 +82,9 @@ module Combat =
                       |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 1; Damage = 500 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(1, 500) }
             |> run state
 
         match result with
@@ -99,7 +101,9 @@ module Combat =
                       |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 1; Damage = 1100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(1, 1100) }
             |> run state
 
         match result with
@@ -118,7 +122,9 @@ module Combat =
                   Characters = [ (0, source); (1, target) ] |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 1; Damage = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(1, 100) }
             |> run state
 
         match result with
@@ -135,7 +141,9 @@ module Combat =
                   Characters = [ (0, source); (1, target) ] |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 1; Damage = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(1, 100) }
             |> run state
 
         match result with
@@ -149,7 +157,9 @@ module Combat =
                   Characters = [ (0, defaultCharacter) ] |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 0; Damage = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(0, 100) }
             |> run state
 
         match result with
@@ -170,7 +180,9 @@ module Combat =
                   Characters = [ (0, source); (1, target) ] |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 1; Damage = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(1, 100) }
             |> run state
 
         match result with
@@ -191,7 +203,9 @@ module Combat =
                   Characters = [ (0, source); (1, target) ] |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 1; Damage = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(1, 100) }
             |> run state
 
         match result with
@@ -205,7 +219,9 @@ module Combat =
                   Characters = [ (0, defaultCharacter) ] |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 1; Damage = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(1, 100) }
             |> run state
 
         match result with
@@ -227,7 +243,9 @@ module Combat =
                   Characters = [ (0, source); (1, target) ] |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 1; Damage = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(1, 100) }
             |> run state
 
         match result with
@@ -250,7 +268,9 @@ module Combat =
                   Characters = [ (0, source); (1, target) ] |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 1; Damage = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(1, 100) }
             |> run state
 
         match result with
@@ -273,7 +293,9 @@ module Combat =
                   Characters = [ (0, source); (1, target) ] |> Map.ofList }
 
         let result =
-            DamageCharacter { Actor = 0; Target = 1; Damage = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageCharacter(1, 100) }
             |> run state
 
         match result with
@@ -292,7 +314,9 @@ module Healing =
                   Characters = [ (0, character) ] |> Map.ofList }
 
         let result =
-            HealCharacter { Actor = 0; Target = 0; Health = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = HealCharacter(0, 100) }
             |> run state
 
         match result with
@@ -306,7 +330,9 @@ module Healing =
                   Characters = [ (0, defaultCharacter) ] |> Map.ofList }
 
         let result =
-            HealCharacter { Actor = 0; Target = 0; Health = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = HealCharacter(0, 100) }
             |> run state
 
         match result with
@@ -325,7 +351,9 @@ module Healing =
                   Characters = [ (0, character) ] |> Map.ofList }
 
         let result =
-            HealCharacter { Actor = 0; Target = 0; Health = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = HealCharacter(0, 100) }
             |> run state
 
         match result with
@@ -342,7 +370,9 @@ module Healing =
                       |> Map.ofList }
 
         let result =
-            HealCharacter { Actor = 0; Target = 1; Health = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = HealCharacter(1, 100) }
             |> run state
 
         match result with
@@ -359,7 +389,9 @@ module Factions =
                   Characters = [ (0, defaultCharacter) ] |> Map.ofList }
 
         let result =
-            JoinFaction { Actor = 0; Faction = "Foo Fighters" }
+            PerformAction
+                { Actor = 0
+                  Action = JoinFaction "Foo Fighters" }
             |> run state
 
         match result with
@@ -373,7 +405,9 @@ module Factions =
                   Characters = Map.empty }
 
         let result =
-            JoinFaction { Actor = 0; Faction = "Foo Fighters" }
+            PerformAction
+                { Actor = 0
+                  Action = JoinFaction "Foo Fighters" }
             |> run state
 
         match result with
@@ -391,7 +425,9 @@ module Factions =
                   Characters = [ (0, character) ] |> Map.ofList }
 
         let result =
-            LeaveFaction { Actor = 0; Faction = "Foo Fighters" }
+            PerformAction
+                { Actor = 0
+                  Action = LeaveFaction "Foo Fighters" }
             |> run state
 
         match result with
@@ -405,7 +441,9 @@ module Factions =
                   Characters = Map.empty }
 
         let result =
-            LeaveFaction { Actor = 0; Faction = "Foo Fighters" }
+            PerformAction
+                { Actor = 0
+                  Action = LeaveFaction "Foo Fighters" }
             |> run state
 
         match result with
@@ -430,12 +468,16 @@ module Factions =
             { defaultState with
                   Characters = [ (0, character1); (1, character2) ] |> Map.ofList }
 
-        match DamageCharacter { Actor = 0; Target = 1; Damage = 10 }
+        match PerformAction
+                  { Actor = 0
+                    Action = DamageCharacter(1, 10) }
               |> run state with
         | Ok _ -> failwithf "Expected an error but got none"
         | Error _ -> Assert.True(true)
 
-        match DamageCharacter { Actor = 1; Target = 0; Damage = 10 }
+        match PerformAction
+                  { Actor = 1
+                    Action = DamageCharacter(0, 10) }
               |> run state with
         | Ok _ -> failwithf "Expected an error but got none"
         | Error _ -> Assert.True(true)
@@ -460,14 +502,18 @@ module Factions =
             { defaultState with
                   Characters = [ (0, character1); (1, character2) ] |> Map.ofList }
 
-        match HealCharacter { Actor = 0; Target = 1; Health = 100 }
+        match PerformAction
+                  { Actor = 0
+                    Action = HealCharacter(1, 100) }
               |> run state with
         | Ok { Characters = characters } ->
             Assert.Equal(500, characters.[0].Health)
             Assert.Equal(500, characters.[1].Health)
         | Error s -> failwithf "Got error while healing character: %s" s
 
-        match HealCharacter { Actor = 1; Target = 0; Health = 100 }
+        match PerformAction
+                  { Actor = 1
+                    Action = HealCharacter(0, 100) }
               |> run state with
         | Ok { Characters = characters } ->
             Assert.Equal(600, characters.[0].Health)
@@ -522,7 +568,9 @@ module Props =
                   Props = [ (0, defaultProp) ] |> Map.ofList }
 
         let result =
-            DamageProp { Actor = 0; Target = 0; Damage = 100 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageProp(0, 100) }
             |> run state
 
         match result with
@@ -537,7 +585,9 @@ module Props =
                   Props = [ (0, defaultProp) ] |> Map.ofList }
 
         let result =
-            DamageProp { Actor = 0; Target = 0; Damage = 200 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageProp(0, 200) }
             |> run state
 
         match result with
@@ -558,7 +608,9 @@ module Props =
                   Props = [ (0, prop) ] |> Map.ofList }
 
         let result =
-            DamageProp { Actor = 0; Target = 0; Damage = 200 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageProp(0, 200) }
             |> run state
 
         match result with
@@ -577,7 +629,9 @@ module Props =
                   Props = Map.empty }
 
         let result =
-            DamageProp { Actor = 0; Target = 0; Damage = 200 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageProp(0, 200) }
             |> run state
 
         match result with
@@ -592,7 +646,9 @@ module Props =
                   Props = [ (0, defaultProp) ] |> Map.ofList }
 
         let result =
-            DamageProp { Actor = 0; Target = 0; Damage = 200 }
+            PerformAction
+                { Actor = 0
+                  Action = DamageProp(0, 200) }
             |> run state
 
         match result with
@@ -613,21 +669,43 @@ module GameSequence =
                   { Type = "Crate"
                     Health = 10
                     Position = 5, 5 }
-              CreateCharacter { FighterType = Melee } // Id = 0
-              CreateCharacter { FighterType = Melee } // Id = 1
-              CreateCharacter { FighterType = Ranged } // Id = 2
+              CreateCharacter { FighterType = Melee }
+              CreateCharacter { FighterType = Melee }
+              CreateCharacter { FighterType = Ranged }
 
-              DamageProp { Actor = 0; Target = 0; Damage = 100 } // Tree health - 100
-              DamageProp { Actor = 2; Target = 1; Damage = 10 } // Destroy crate
-              DamageCharacter { Actor = 0; Target = 1; Damage = 200 } // Player 1 health - 200 (to 800)
-              DamageCharacter { Actor = 0; Target = 2; Damage = 150 } // Player 2 health - 150 (to 850)
-              HealCharacter { Actor = 2; Target = 2; Health = 500 } // Player 2 health + 500 (to 1000)
-              JoinFaction { Actor = 1; Faction = "Muppets" }
-              DamageCharacter { Actor = 1; Target = 2; Damage = 200 } // Player 2 health - 200 (to 800)
-              JoinFaction { Actor = 2; Faction = "Muppets" }
-              HealCharacter { Actor = 2; Target = 1; Health = 500 } // Player 1 health + 500 (to 1000)
-              DamageCharacter { Actor = 1; Target = 0; Damage = 300 } // Player 0 health - 300 (to 700)
-              DamageCharacter { Actor = 2; Target = 0; Damage = 800 } ]
+              PerformAction
+                  { Actor = 0
+                    Action = DamageProp(0, 100) }
+              PerformAction
+                  { Actor = 2
+                    Action = DamageProp(1, 10) }
+              PerformAction
+                  { Actor = 0
+                    Action = DamageCharacter(1, 200) }
+              PerformAction
+                  { Actor = 0
+                    Action = DamageCharacter(2, 150) }
+              PerformAction
+                  { Actor = 2
+                    Action = HealCharacter(2, 500) }
+              PerformAction
+                  { Actor = 1
+                    Action = JoinFaction "Muppets" }
+              PerformAction
+                  { Actor = 1
+                    Action = DamageCharacter(2, 200) }
+              PerformAction
+                  { Actor = 2
+                    Action = JoinFaction "Muppets" }
+              PerformAction
+                  { Actor = 2
+                    Action = HealCharacter(1, 500) }
+              PerformAction
+                  { Actor = 1
+                    Action = DamageCharacter(0, 300) }
+              PerformAction
+                  { Actor = 2
+                    Action = DamageCharacter(0, 800) } ]
 
         let expectedState =
             { Props =
